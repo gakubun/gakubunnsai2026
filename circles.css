@@ -1,0 +1,76 @@
+/* --- 基本設定 --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; }
+.page-header { text-align: center; padding: 40px 20px; background: #fff; margin-bottom: 30px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px 50px; }
+.circle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+/* --- カードデザイン --- */
+.circle-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+
+/* --- スライダー（無限増殖対応版） --- */
+.circle-slider {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #000;
+}
+.circle-slider input[type="radio"] { display: none; }
+
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slides img {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+/* ★魔法のCSS：IDの末尾が何番かで移動量を決める（サークルが増えても有効） */
+[id$="-1"]:checked ~ .slides { transform: translateX(0%); }
+[id$="-2"]:checked ~ .slides { transform: translateX(-100%); }
+[id$="-3"]:checked ~ .slides { transform: translateX(-200%); }
+[id$="-4"]:checked ~ .slides { transform: translateX(-300%); }
+
+/* --- 丸ボタンの連動設定 --- */
+.controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+.controls label {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* ★魔法のCSS：何番目のラジオボタンがチェックされたかで、対応するラベルを光らせる */
+.circle-slider input:nth-of-type(1):checked ~ .controls label:nth-of-type(1),
+.circle-slider input:nth-of-type(2):checked ~ .controls label:nth-of-type(2),
+.circle-slider input:nth-of-type(3):checked ~ .controls label:nth-of-type(3),
+.circle-slider input:nth-of-type(4):checked ~ .controls label:nth-of-type(4) {
+    background: #fff;
+    transform: scale(1.3);
+}
+
+/* --- 装飾 --- */
+.category-tag { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.6); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+.circle-content { padding: 20px; }
+.circle-content h3 { margin-bottom: 8px; font-size: 1.25rem; }
+.circle-content p { font-size: 0.9rem; color: #666; height: 3em; overflow: hidden; }
+.circle-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 15px; }
+.circle-meta span { font-size: 0.8rem; color: #e67e22; font-weight: bold; }
+.btn-detail { background: #007bff; color: #fff; padding: 6px 15px; border-radius: 6px; text-decoration: none; font-size: 0.8rem; font-weight: bold; }
