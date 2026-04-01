@@ -36,7 +36,7 @@ nav li {
 
 nav a {
     color: rgb(12, 12, 12);
-    text-decoration: thickness:5px;
+    text-decoration-thickness:　5px;
     font-weight:bold;
     padding:5px 10px;
     transition: background-color 0.3s;
@@ -137,6 +137,14 @@ footer {
         flex: 1 1 100%; /* イベント一覧を1列にする */
     }
 }
+
+
+
+
+
+h3{ font-family: "Train One", system-ui;
+  font-weight: 400;
+  font-style: normal;}
 
 
 
