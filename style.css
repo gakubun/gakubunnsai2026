@@ -11,7 +11,7 @@ body {
 /* ヘッダーのスタイル */
 header {
     background-color:  #c3d825; /* テーマカラー */
-    color: #a8003d;
+    color: #227924;
     padding: 20px 25px;
     text-align: center;
 }
@@ -37,8 +37,8 @@ nav li {
 nav a {
     color: rgb(12, 12, 12);
     text-decoration: thickness:5px;
-    font-weight: bold;
-    padding: 5px 10px;
+    font-weight:bold;
+    padding:5px 10px;
     transition: background-color 0.3s;
 }
 
@@ -63,8 +63,8 @@ section {
 }
 
 h2 {
-    color: #a8003d;
-    border-bottom: 3px solid #f9c000; /* セクションのタイトルにアクセント */
+    color: #227924;
+    border-bottom: 3px solid #c3d825; /* セクションのタイトルにアクセント */
     padding-bottom: 5px;
     margin-top: 0;
 }
@@ -98,7 +98,7 @@ th, td {
 }
 
 th {
-    background-color: #a8003d;
+    background-color: #c3d825;
     color: white;
 }
 
