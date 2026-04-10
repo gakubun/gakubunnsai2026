@@ -1,3 +1,61 @@
+/* --- ヒーローセクションのスタイル --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* ビューポートの高さいっぱい */
+    background-image: url('main_visual.jpg'); /* ★ここに実際の画像パスを設定★ */
+    background-size: cover; /* 画像を画面いっぱいに広げる */
+    background-position: center; /* 画像を中央に配置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden; /* 子要素がはみ出さないように */
+}
+
+/* ヒーローセクションのオーバーレイ */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c3d825(0, 0, 0, 0.4); /* 半透明の黒 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-overlay p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+.scroll-down-btn {
+    display: inline-block;
+    background-color: #a8003d; /* テーマカラー */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+    background-color: #d1004a; /* ホバー時の色 */
+}
 
 /* 基本的なリセットとフォント設定 */
 body {
