@@ -1,17 +1,35 @@
 /* --- ヒーローセクションのスタイル --- */
+html {
+    /* スムーズにスクロールさせる設定（お好みで） */
+    scroll-behavior: smooth;
+
+    /* ★ここが重要：ヘッダーの高さに合わせて数値を調整してください */
+    scroll-padding-top: 180px; 
+}
+
+/* --- 1. 背景固定の設定（スマホ対応版） --- */
+/* 背景専用のレイヤーを背面に固定します */
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('飛燕原画.jpg'); /* 画像パス */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* コンテンツの裏側に配置 */
+}
+
+/* --- 2. ヒーローセクション --- */
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh; /* ビューポートの高さいっぱい */
-    background-image: url('飛燕原画.jpg'); /* ★ここに実際の画像パスを設定★ */
-    background-size: cover; /* 画像を画面いっぱいに広げる */
-    background-position: center; /* 画像を中央に配置 */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    text-align: center;
-    overflow: hidden; /* 子要素がはみ出さないように */
+    background: transparent; /* 背景は完全に透明 */
 }
 
 /* ヒーローセクションのオーバーレイ */
@@ -21,29 +39,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #c3d825(0, 0, 0, 0.4); /* 半透明の黒 */
+/* ★修正：黒い膜を完全に消す（background-colorを削除） */
+    background-color: transparent; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
-.hero-overlay h1 {
-    font-size: 3.5em;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+/* 文字が画像に埋もれないよう、影だけを少し強めに設定 */
+.hero-overlay h1, .hero-overlay p {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.hero-overlay p {
-    font-size: 1.5em;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-}
-
+/* スクロールダウンボタン */
 .scroll-down-btn {
     display: inline-block;
-    background-color: #a8003d; /* テーマカラー */
+    background-color: #a8003d;
     color: white;
     padding: 12px 25px;
     border-radius: 30px;
@@ -53,167 +67,128 @@
     transition: background-color 0.3s ease;
 }
 
-.scroll-down-btn:hover {
-    background-color: #d1004a; /* ホバー時の色 */
-}
-
-/* 基本的なリセットとフォント設定 */
+/* --- 3. 全体設定とコンテンツセクション --- */
 body {
     font-family: "Zen Antique Soft", serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f2f2f0; /* 背景色 */
-    color: #333; /* テキストの色 */
+    color: #333;
+    /* 背景色は透明度を持たせて、固定背景が少し透けるように設定 */
+    background-color: transparent; 
 }
 
-/* ヘッダーのスタイル */
+/* --- 2. コンテンツセクション（文字の背景になる部分） --- */
+.content-section {
+    position: relative;
+    z-index: 10;
+    /* ★ここで「白い膜」を設定します */
+    /* rgbaの最後(0.8)を大きくすると白が濃くなり、小さくすると透明に近づきます */
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* ヘッダーのスタイル（固定設定） */
 header {
-    background-color:  #c3d825; /* テーマカラー */
+    position: sticky; /* スクロールに合わせて上部に残る */
+    top: 0;
+    z-index: 1000;
+    background-color: #c3d825;
     color: #227924;
-    padding: 20px 25px;
+    padding: 1px 25px;
     text-align: center;
 }
 
-header h1 {
-    margin-bottom: 10px;
-    font-size: 1.8em;
-}
-
-/* ナビゲーションメニュー */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex; /* 横並びにする */
-    justify-content: center; /* 中央揃え */
-}
-
-nav li {
-    margin: 0 15px;
-}
-
-nav a {
-    color: rgb(12, 12, 12);
-    text-decoration-thickness:　5px;
-    font-weight:bold;
-    padding:5px 10px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
-/* メインコンテンツのセクション */
-main {
-    max-width: 1000px;
-    margin: 20px auto; /* ページの左右中央に配置 */
-    padding: 0 20px;
-}
-
+/* セクションの装飾（少し透けさせる） */
 section {
-    background-color: white;
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    /* content-sectionに色がついていれば、ここは透明でも白でもOK */
+    background-color: white; 
     padding: 30px;
-    margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 影を付けて立体感を出す */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* --- 4. タイポグラフィ --- */
 h2 {
     color: #227924;
-    border-bottom: 3px solid #c3d825; /* セクションのタイトルにアクセント */
+    border-bottom: 3px solid #c3d825;
     padding-bottom: 5px;
     margin-top: 0;
 }
 
-/* イベント一覧 (Flexboxでレイアウト) */
+h3 {
+    font-family: "Train One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* --- 5. ナビゲーション・テーブル・フッター --- */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li { margin: 0 15px; }
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
 .event-list {
     display: flex;
-    gap: 20px; /* 要素間のスペース */
-    flex-wrap: wrap; /* 画面が狭くなったら折り返す */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .event-list article {
-    flex: 1 1 calc(33% - 20px); /* 3列に均等配置 (画面幅により調整) */
-    background-color: #fffaf0;
+    flex: 1 1 calc(33% - 20px);
+    background-color: rgba(255, 250, 240, 0.9);
     padding: 15px;
     border-radius: 5px;
-    min-width: 250px; /* 最小幅 */
+    min-width: 250px;
 }
 
-.event-list article h3 {
-    margin-top: 5px;    /* 上の余白を5pxに（標準はもっと広いです） */
-    margin-bottom: 5px; /* 下の余白を5pxに */
-}
+table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+th, td { border: 1px solid #ddd; padding: 12px; }
+th { background-color: #c3d825; color: white; }
 
-/* タイムテーブル */
-table {
-    width: 100%;
-    border-collapse: collapse; /* セルの境界線を一つにする */
-    margin-top: 15px;
-}
-
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #c3d825;
-    color: white;
-}
-
-tr:nth-child(even) { /* 偶数行の背景色 */
-    background-color: #f2f2f2;
-}
-
-/* フッター */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 15px;
-    margin-top: 20px;
-    font-size: 0.9em;
-
+    padding: 20px;
 }
 
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #227924; /* 緑色のボタン */
+    color: white;
+    text-decoration: none; /* 下線を消す */
+    border-radius: 5px;    /* 角を丸く */
+    font-weight: bold;
+    transition: 0.3s;
+}
 
+.custom-button:hover {
+    background-color: #c3d825; /* ホバー時に色を変える */
+    color: #227924;
+}
 
-
-
-
-/* モバイル対応 (レスポンシブデザイン) */
+/* モバイル対応 */
 @media (max-width: 600px) {
-    /* 画面幅が600px以下の場合の調整 */
-    nav ul {
-        flex-direction: column; /* ナビゲーションを縦並びにする */
-    }
-
-    nav li {
-        margin: 5px 0;
-    }
-
-    .event-list article {
-        flex: 1 1 100%; /* イベント一覧を1列にする */
-    }
+    nav ul { flex-direction: column; }
+    .event-list article { flex: 1 1 100%; }
+    .hero-overlay h1 { font-size: 2em; }
 }
-
-
-
-
-
-h3{ font-family: "Train One", system-ui;
-  font-weight: 400;
-  font-style: normal;}
-
-
-
-
-
-h3{ font-family: "Train One", system-ui;
-  font-weight: 400;
-  font-style: normal;}
