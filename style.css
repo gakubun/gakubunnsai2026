@@ -3,7 +3,7 @@
     position: relative;
     width: 100%;
     height: 100vh; /* ビューポートの高さいっぱい */
-    background-image: url('main_visual.jpg'); /* ★ここに実際の画像パスを設定★ */
+    background-image: url('飛燕原画.jpg'); /* ★ここに実際の画像パスを設定★ */
     background-size: cover; /* 画像を画面いっぱいに広げる */
     background-position: center; /* 画像を中央に配置 */
     display: flex;
