@@ -69,6 +69,7 @@ html {
 
 /* --- 3. 全体設定とコンテンツセクション --- */
 body {
+    /* "Zen Antique Soft" や "Kaisei Decol" から、一般的な読みやすいゴシック体へ変更 */
     font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
     margin: 0;
     padding: 0;
@@ -131,12 +132,10 @@ h2 {
     margin-top: 0;
 }
 
+/* サークル紹介などで使っている特殊な見出しはそのまま維持 */
 h3 {
     font-family: "Train One", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    /* その他のスタイルはそのまま */
 }
 
 /* --- 5. ナビゲーション・テーブル・フッター --- */
@@ -195,6 +194,10 @@ footer {
 .custom-button:hover {
     background-color: #c3d825; /* ホバー時に色を変える */
     color: #227924;
+}
+
+strong {
+    color: #000; /* 太字をよりはっきりさせる */
 }
 
 /* モバイル対応 (レスポンシブデザイン) */
