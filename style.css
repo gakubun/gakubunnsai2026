@@ -186,9 +186,44 @@ footer {
     color: #227924;
 }
 
-/* モバイル対応 */
+/* モバイル対応 (レスポンシブデザイン) */
 @media (max-width: 600px) {
-    nav ul { flex-direction: column; }
-    .event-list article { flex: 1 1 100%; }
+    /* ヘッダーの文字サイズを少し小さく調整 */
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    /* ★ここが重要：メニューを横並びのままスクロール可能にする */
+    nav ul {
+        flex-direction: row;       /* 縦ではなく横並びを維持 */
+        justify-content: flex-start; /* 左詰めに配置 */
+        overflow-x: auto;          /* 横方向にはみ出た分をスクロール可能にする */
+        white-space: nowrap;       /* 文字を改行させない */
+        padding: 10px 0;           /* 上下に少し余白 */
+        -webkit-overflow-scrolling: touch; /* iPhoneでのスクロールを滑らかにする */
+    }
+
+    /* 各メニュー項目の間隔を調整 */
+    nav li {
+        margin: 0 10px;
+        flex-shrink: 0;            /* 項目が潰れないようにする */
+    }
+
+    /* スクロールバーを隠す（見た目をスッキリさせる場合） */
+    nav ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* イベント一覧はスマホでは1列の方が見やすいので維持 */
+    .event-list article {
+        flex: 1 1 100%;
+    }
+
     .hero-overlay h1 { font-size: 2em; }
+
+    nav a {
+    font-size: 0.85em; /* 文字を少し小さく */
+    padding: 5px 5px;  /* 左右の余白を詰める */
+}
+
 }
