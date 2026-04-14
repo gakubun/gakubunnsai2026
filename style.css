@@ -78,7 +78,15 @@ html {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ★マウスを合わせた時（ホバー時）の状態 */
+.scroll-down-btn:hover {
+    background-color: #ffffff; /* マウスを置いた時の色（少し濃い色など） */
+    color: #35a89d;            /* 文字色を変えたい場合はここも変更 */
+    transform: translateY(-3px); /* おまけ：少し上に浮き上がらせる演出 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影をつけて浮かせる */
 }
 
 /* --- 3. 全体設定とコンテンツセクション --- */
