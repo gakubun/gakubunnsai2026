@@ -69,12 +69,11 @@ html {
 
 /* --- 3. 全体設定とコンテンツセクション --- */
 body {
-    font-family: "Kaisei Decol", serif;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.8; /* 行間を少し広げるとさらに読みやすくなります */
     color: #333;
-    /* 背景色は透明度を持たせて、固定背景が少し透けるように設定 */
     background-color: transparent; 
 }
 
@@ -113,7 +112,19 @@ section {
 }
 
 /* --- 4. タイポグラフィ --- */
+/* メインタイトル (第47回学文祭「飛 燕」) */
+header h1 {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500; /* Mediumを指定 */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    /* その他のスタイル */
+}
+
+/* セクションの見出し (📢 開催概要 など) */
 h2 {
+    font-family: "Kaisei Decol", serif;
+    font-weight: 400; /* 通常のKaisei Decol */
     color: #227924;
     border-bottom: 3px solid #c3d825;
     padding-bottom: 5px;
@@ -187,9 +198,11 @@ footer {
 }
 
 /* モバイル対応 (レスポンシブデザイン) */
+/* --- スマホ版のタイトルサイズ調整 --- */
 @media (max-width: 600px) {
-    /* ヘッダーの文字サイズを少し小さく調整 */
     header h1 {
+        font-family: "Kaisei Decol", serif;
+        font-weight: 500;
         font-size: 1.8em;
     }
 
