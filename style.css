@@ -190,7 +190,7 @@ footer {
 @media (max-width: 600px) {
     /* ヘッダーの文字サイズを少し小さく調整 */
     header h1 {
-        font-size: 1.2em;
+        font-size: 1.8em;
     }
 
     /* ★ここが重要：メニューを横並びのままスクロール可能にする */
@@ -199,13 +199,13 @@ footer {
         justify-content: flex-start; /* 左詰めに配置 */
         overflow-x: auto;          /* 横方向にはみ出た分をスクロール可能にする */
         white-space: nowrap;       /* 文字を改行させない */
-        padding: 10px 0;           /* 上下に少し余白 */
+        padding: 2px 0;           /* 上下に少し余白 */
         -webkit-overflow-scrolling: touch; /* iPhoneでのスクロールを滑らかにする */
     }
 
     /* 各メニュー項目の間隔を調整 */
     nav li {
-        margin: 0 10px;
+        margin: 0 5px;
         flex-shrink: 0;            /* 項目が潰れないようにする */
     }
 
