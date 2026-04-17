@@ -1,0 +1,115 @@
+/* ゲスト名を目立たせる */
+.guest-title {
+    font-family: "Kaisei Decol", serif;
+    color: #ffeb3b; /* 華やかなイエロー */
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
+}
+
+nav a {
+    /* ★読みやすいゴシック体に変更 */
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-weight: bold; /* 読みやすさを重視して太字に */
+    font-size: 1.2em;
+    color: #358f94;
+    text-decoration: none;
+    padding: 5px 10px;
+
+    /* 既存の枠線設定 */
+    text-shadow: 
+        0.5px 0.5px 0 #ffffff,
+       -0.5px 0.5px 0 #ffffff,
+        0.5px -0.5px 0 #ffffff,
+       -0.5px -0.5px 0 #ffffff;
+}
+
+.artist-name {
+    /* ★Kaisei Decol を追加 */
+    font-family: "Kaisei Decol", serif;
+    font-weight: 500; /* Medium で名前を強調 */
+    
+    font-size: 2em;
+    color: #227924;
+    margin-bottom: 10px;
+}
+
+/* 芸人さんの写真と文章を横並びにする（PC時） */
+.guest-flex {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* 写真の枠組み */
+.guest-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+/* 写真自体のスタイル */
+.photo-frame {
+    width: 100%;       /* 親要素の幅いっぱいに広げる */
+    max-width: 400px;  /* 大きくなりすぎないように制限 */
+    height: auto;      /* 比率を保ったまま高さを自動調整 */
+    border-radius: 10px; /* 角を少し丸くする */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* 軽い影をつけて浮かせる */
+    border: 3px solid #c3d825; /* 学祭カラーの枠線をつけるとおしゃれ */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.guest-text {
+    flex: 2;
+}
+
+/* ゲストページ専用のテーブル調整 */
+.guest-table {
+    margin-top: 20px;
+}
+
+.guest-table th {
+    width: 30%;
+}
+
+/* 注意事項 */
+.caution {
+    color: #d32f2f;
+    font-size: 0.9em;
+    list-style: none;
+    padding: 0;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .guest-flex {
+        flex-direction: column;
+    }
+
+    nav a {
+        /* ★ここもゴシック体に変更 */
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    .artist-name {
+        font-size: 1.8em; /* スマホでは少しサイズを抑える */
+    }
+
+    /* 2. ナビゲーションメニューを中央に */
+    nav ul {
+        flex-direction: row;
+        justify-content: center; /* 左詰め(flex-start)から中央(center)へ変更 */
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0px 0;
+    }
+}
