@@ -216,16 +216,17 @@ section {
     padding: 20px 0;
 }
 
-/* 画像を横一列に並べるコンテナ */
+/* 画像を横一列に並べて動かすコンテナ */
 .slider-inner {
     display: flex;
-    width: calc(250px * 8); /* (画像幅250px) × (画像枚数8枚) */
-    animation: loop-scroll 20s linear infinite; /* 20秒かけてループ */
+    width: fit-content; /* 中身のサイズに合わせる */
+    animation: loop-scroll 30s linear infinite; /* 30秒で1周、一定速度で無限に */
 }
 
-/* 各画像の設定 */
+/* 各スライドの設定 */
 .slide-item {
-    width: 250px;
+    width: 300px; /* 画像の幅（お好みで調整） */
+    flex-shrink: 0;
     padding: 0 10px;
 }
 
@@ -236,13 +237,13 @@ section {
     border: 3px solid #c3d825; /* 学祭カラーの枠線 */
 }
 
-/* ★無限ループのアニメーション設定 */
+/* ★アニメーションの定義：左へ半分（1セット分）進んだら最初に戻る */
 @keyframes loop-scroll {
-    0% {
+    from {
         transform: translateX(0);
     }
-    100% {
-        transform: translateX(-50%); /* 半分（1セット分）進んだら最初に戻る */
+    to {
+        transform: translateX(-50%); /* 全体の半分＝2セット目の開始位置まで来たら0に戻る */
     }
 }
 
