@@ -47,6 +47,8 @@ html {
     margin: 0 auto;         /* 左右マージンを自動調整 */
     background: none;
     box-shadow: none;
+    color: #227924;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
 }
 
 .hero-overlay .title {
