@@ -172,6 +172,34 @@ section {
     border-radius: 5px;
 }
 
+/* --- 展示マップと表の横並び設定 --- */
+.schedule-container {
+    display: flex;
+    gap: 30px;           /* 画像と表の間の隙間 */
+    align-items: flex-start; /* 上揃え */
+    margin-bottom: 40px;
+}
+
+/* マップ画像のエリア */
+.map-area {
+    flex: 1;             /* 幅の比率（1） */
+    min-width: 0;
+}
+
+.map-area img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #c3d825; /* 学祭カラーの枠線 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 表のエリア */
+.day-group {
+    flex: 1;             /* 幅の比率（1）画像と同じ幅にする */
+    min-width: 0;
+}
+
 /* --- ホームに戻るボタン --- */
 .back-home-button {
     position: fixed;
@@ -247,6 +275,14 @@ section {
 
     .guest-title {
         font-size: 2.5em;
+    }
+    .schedule-container {
+        flex-direction: column; /* スマホでは縦に並べる */
+        gap: 20px;
+    }
+
+    .map-area, .day-group {
+        width: 100%;          /* 横幅いっぱい */
     }
 }
 
