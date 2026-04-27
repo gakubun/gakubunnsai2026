@@ -1,0 +1,285 @@
+/* --- 共通設定・背景 --- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+.fixed-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('飛燕原画.jpg'); /* 背景画像 */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* --- ヒーローセクション（全画面） --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-overlay {
+    color: #227924;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+.guest-title {
+    font-family: "Kaisei Decol", serif;
+    font-size: 4em;
+    margin: 0;
+    letter-spacing: 0.1em;
+}
+
+/* スクロールダウンボタン */
+.scroll-down-btn {
+    position: relative;
+    z-index: 21; /* ボタンを最前面へ */
+    pointer-events: auto; /* クリックを確実に許可 */
+    display: inline-block;
+    background-color: #44cabd;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* ★マウスを合わせた時（ホバー時）の状態 */
+.scroll-down-btn:hover {
+    background-color: #ffffff; /* マウスを置いた時の色（少し濃い色など） */
+    color: #35a89d;            /* 文字色を変えたい場合はここも変更 */
+    transform: translateY(-3px); /* おまけ：少し上に浮き上がらせる演出 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影をつけて浮かせる */
+}
+
+/* --- コンテンツエリア --- */
+.content-section {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 40px 0;
+    position: relative;
+    z-index: 10;
+}
+
+header h1 {
+    text-align: center;
+    font-family: "Kaisei Decol", serif;
+    color: #227924;
+    font-size: 2.2em;
+}
+
+section {
+    max-width: 1100px; /* 4列テーブルが2つ並ぶため少し広めに設定 */
+    margin: 0 auto 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    font-family: "Kaisei Decol", serif;
+    color: #227924;
+    border-bottom: 3px solid #c3d825;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+/* --- スケジュールコンテナ（横並び設定） --- */
+.schedule-container {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.day-group {
+    flex: 1;
+    min-width: 0; /* フレックスアイテムの潰れ防止 */
+}
+
+.day-label {
+    background-color: #c3d825;
+    color: #227924;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* --- 4列テーブルの調整 --- */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85em; /* 横並び時のために少し小さく */
+}
+
+.schedule-table th, .schedule-table td {
+    border: 1px solid #c3d825;
+    padding: 10px 5px;
+    text-align: left;
+    word-break: break-all; /* 長い単語で枠が壊れないように */
+}
+
+.schedule-table th {
+    background-color: #227924;
+    color: white;
+    font-weight: bold;
+}
+
+.time { width: 80px; font-weight: bold; color: #227924; background: #f9f9f9; }
+.group-name { width: 90px; }
+.stage-name { width: auto; font-weight: 500; }
+.stage-place { width: 90px; color: #358f94; font-size: 0.9em; }
+
+/* --- イベント紹介（画像3枚・テキスト） --- */
+.info-flex {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.info-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.photo-frame {
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #c3d825;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.info-text {
+    flex: 1;
+}
+
+.info-text h3 {
+    color: #227924;
+    border-left: 5px solid #c3d825;
+    padding-left: 10px;
+    margin-top: 30px;
+}
+
+.point-list {
+    list-style: none;
+    padding: 0;
+}
+
+.point-list li {
+    background: #f0f4e1;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* --- ホームに戻るボタン --- */
+.back-home-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #227924;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* スライダーの外枠 */
+.slider {
+    overflow: hidden; /* はみ出た画像を残さない */
+    width: 100%;
+    background: white;
+    padding: 20px 0;
+}
+
+/* 画像を横一列に並べるコンテナ */
+.slider-inner {
+    display: flex;
+    width: calc(250px * 8); /* (画像幅250px) × (画像枚数8枚) */
+    animation: loop-scroll 20s linear infinite; /* 20秒かけてループ */
+}
+
+/* 各画像の設定 */
+.slide-item {
+    width: 250px;
+    padding: 0 10px;
+}
+
+.slide-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #c3d825; /* 学祭カラーの枠線 */
+}
+
+/* ★無限ループのアニメーション設定 */
+@keyframes loop-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* 半分（1セット分）進んだら最初に戻る */
+    }
+}
+
+/* マウスを乗せた時に動きを止める（お好みで） */
+.slider:hover .slider-inner {
+    animation-play-state: paused;
+}
+
+/* --- モバイル対応 --- */
+@media (max-width: 1024px) {
+    .schedule-container {
+        flex-direction: column;
+    }
+    
+    .schedule-table {
+        font-size: 0.95em;
+    }
+
+    .time, .group-name, .stage-place {
+        width: auto;
+    }
+
+    .info-flex {
+        flex-direction: column;
+    }
+    
+    .hero-section {
+        height: 100vh;
+    }
+    
+    .guest-title {
+        font-size: 2.5em;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+}
