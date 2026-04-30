@@ -204,6 +204,37 @@ table { width: 100%; border-collapse: collapse; margin-top: 15px; }
 th, td { border: 1px solid #ddd; padding: 12px; }
 th { background-color: #c3d825; color: white; }
 
+/* タイムテーブル内のリンク設定 */
+#timetable table td a {
+    text-decoration: none; /* 下線を消す */
+    color: #333;           /* 基本の文字色（お好みで） */
+    font-weight: bold;     /* 太文字を強調 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 変化を滑らかにする */
+    display: inline-block; /* 動き（transform）を有効にするため */
+}
+
+/* 通常時の strong の色を黒に固定せず、<a> に従わせる */
+#timetable table td a strong {
+    color: #148912; 
+    transition: 0.3s;
+}
+
+/* ホバーした時に strong の色を変える */
+#timetable table td a:hover strong {
+    color: #c3d825;
+}
+
+/* マウスを乗せた時に少し浮かせる（親切な演出） */
+#timetable table td a:hover {
+    color: #c3d825;        /* 学祭カラーの緑に変える */
+    transform: translateY(-2px);
+}
+
+/* ジャンプ先の位置を上に80px分あける設定 */
+[id] {
+    scroll-margin-top: 50px; 
+}
+
 footer {
     background-color: #333;
     color: white;
@@ -282,5 +313,9 @@ strong {
     
     .button-container {
         justify-content: center; /* スマホでは中央の方が見やすい場合が多いです */
+    }
+
+    #timetable table {
+        font-size: 0.8rem; /* 少し小さくして収まりを良くする */
     }
 }
