@@ -91,6 +91,57 @@ html {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 影をつけて浮かせる */
 }
 
+/* 画面右下に大きく固定 */
+.countdown-fixed-badge {
+    position: fixed;
+    bottom: 30px;      /* 下から30px（少し浮かせる） */
+    right: 30px;       /* 右から30px */
+    z-index: 9999;
+    
+    /* より鮮やかなグラデーション */
+    background: linear-gradient(135deg, #1d631f 0%, #227924 50%, #c3d825 100%);
+    color: white;
+    padding: 10px 30px; /* 余白を広くして存在感を出す */
+    border-radius: 60px; /* 完全に丸いカプセル型 */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); /* 影を強くして浮かせる */
+    font-weight: 900;    /* 文字を一番太く */
+    font-size: 1.2rem;   /* 全体の文字サイズをアップ */
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* カウントダウンの数字を巨大にする */
+#countdown-days {
+    font-size: 2.8rem;   /* 数字をかなり大きく */
+    color: #fff;
+    margin: 0 8px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    vertical-align: middle;
+}
+
+/* 「本日開催中」の文字も巨大化 */
+.countdown-display strong, 
+#countdown-status strong {
+    font-size: 1.8rem;
+    display: block;      /* 改行して大きく見せる */
+    margin-top: 5px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* 開催中にキラキラさせるアニメーション */
+@keyframes shine {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.05); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* 開催中の文字を少し動かす（任意） */
+.countdown-display strong {
+    display: inline-block;
+    animation: welcome-bounce 1s infinite alternate;
+}
+
 /* --- 3. 全体設定とコンテンツセクション --- */
 body {
     /* "Zen Antique Soft" や "Kaisei Decol" から、一般的な読みやすいゴシック体へ変更 */
@@ -317,5 +368,15 @@ strong {
 
     #timetable table {
         font-size: 0.8rem; /* 少し小さくして収まりを良くする */
+    }
+
+    .countdown-fixed-badge {
+        bottom: 15px;
+        right: 15px;
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+    #countdown-days {
+        font-size: 2.2rem;
     }
 }
