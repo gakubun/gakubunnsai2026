@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>九州産業大学 学文祭 2026</title>
     <meta name="description" content="2026年度九州産業大学学文祭の公式サイトです。ステージ・ステージ外・模擬店・展示イベントの詳細スケジュールを公開中！皆さんのご来場をお待ちしています。">
-    <meta name="keywords" content="九州産業大学,学文祭,九産大,学祭,福岡,イベント,飛燕,学術文化執行委員会,学文,2026,第47回">
+    <meta name="keywords" content="九州産業大学,学文祭,九産大,学祭,福岡,イベント,飛燕,学術文化執行委員会,学文,2026,第47回,HP,ホームページ">
     <link rel="stylesheet" href="style.css"> 
     <meta name="google-site-verification" content="sPhJpdLSXUQKDs5qy3-xVDbNySwgBedOlht5hZH0pgM" />
     <link rel="icon" href="icon.ico">
@@ -20,7 +20,7 @@
     <div class="hero-section">
         <div class="hero-overlay">
             <h1 class="title">第47回<br>学文祭<br>〜飛燕〜</h1>
-            <p>2026年 5月21日（木） 〜 5月24日（日）</p>
+            <p>2026年 5月21日（木）〜 5月24日（日）</p>
             <a href="#about" class="scroll-down-btn">詳細を見る ▼</a>
         </div>
     </div>
@@ -45,12 +45,18 @@
 
     <main>
 
+        <div class="countdown-fixed-badge">
+            <span id="countdown-status">
+                学文祭まであと <span id="countdown-days">--</span> 日
+            </span>
+        </div>
+
         <section id="about">
             <h2>📢 開催概要</h2>
             <p>今年の学文祭のテーマは「飛 燕」。学生たちの熱意と創造性が溢れる4日間です。皆様のご来場をお待ちしております！</p>
             <ul>
-                <li><strong>日時:</strong> 2026年5月21日(木)～24日(日) </li>
-                <li><strong>場所:</strong> 九州産業大学 </li>
+                <li><strong>日時：</strong> 2026年5月21日(木)～24日(日) </li>
+                <li><strong>場所：</strong> 九州産業大学 </li>
             </ul>
             <div class="button-container">
                 <a href="kaisaigaiyou.html" class="custom-button">詳細を見る</a>
@@ -61,10 +67,10 @@
             <h2>🥳 参加団体紹介 ✨</h2>
             <p>今年の参加団体は、以下の３６団体となります！各団体の詳細もぜひご覧ください！！
                 <ul>
-                    <li><strong>学友会五者執行部:</strong> ６団体 </li>
-                    <li><strong>学術文化会系団体:</strong> ２２団体 </li>
-                    <li><strong>体育会系団体　　:</strong> １団体 </li>
-                    <li><strong>愛好会・任意団体:</strong> ７団体 </li>
+                    <li><strong>学友会五者執行部：</strong> ６団体 </li>
+                    <li><strong>学術文化会系団体：</strong> ２２団体 </li>
+                    <li><strong>体育会系団体　　：</strong> １団体 </li>
+                    <li><strong>愛好会・任意団体：</strong> ７団体 </li>
                 </ul>
             </p>
             <div class="button-container">
@@ -169,13 +175,13 @@
         </section>
 
         <section id="contact">
-            <h2>✉️ お問い合わせ</h2>
+            <h2>☎️ お問い合わせ</h2>
             <p>学文祭に関するご質問などは、下記までご連絡ください。</p>
             <p>
                 <strong>九州産業大学 学友会 学術文化執行委員会</strong><br>
-                Tell　 ：092-673-5111<br>
-                Email：<a href="mailto:gakubun@st.kyusan-u.ac.jp">gakubun@st.kyusan-u.ac.jp</a><br>
-                SNS  ： <a href="https://x.com/KSU_gakubun">X (Twitter)</a> / <a href="https://www.instagram.com/ksu_gakubun/">Instagram</a>
+                📞 Tell　 ：092-673-5111<br>
+                ✉️ Email：<a href="mailto:gakubun@st.kyusan-u.ac.jp">gakubun@st.kyusan-u.ac.jp</a><br>
+                📱 SNS  ： <a href="https://x.com/KSU_gakubun">X (Twitter)</a> / <a href="https://www.instagram.com/ksu_gakubun/">Instagram</a>
             </p>
         </section>
 
@@ -186,4 +192,41 @@
     </footer>
 
 
-    </div></body>
+    </div>
+
+    <script>
+    function updateCountdown() {
+        const now = new Date();
+    
+        // 開始日: 5月21日 00:00:00
+        const startDate = new Date('2026/05/21 00:00:00');
+        // 終了日: 5月24日 23:59:59 (この時間まで「開催中」とする)
+        const endDate = new Date('2026/05/24 23:59:59');
+    
+        const statusWrapper = document.getElementById('countdown-status');
+        const daysElement = document.getElementById('countdown-days');
+
+        if (now < startDate) {
+            // 【開催前】あと何日か計算
+            // 5/21 00:00ちょうどを基準に、端数を切り上げて計算
+            const diff = startDate - now;
+            const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            daysElement.textContent = days;
+        } 
+        else if (now >= startDate && now <= endDate) {
+            // 【期間中】5/21〜5/24の間
+            statusWrapper.innerHTML = "✨ <strong>学文祭 本日開催中！</strong> ✨";
+            statusWrapper.style.color = "#227924"; // 開催中は緑色にするなどの演出
+        } 
+        else {
+            // 【終了後】5/25以降
+            statusWrapper.textContent = "学文祭は無事終了しました。ご来場ありがとうございました！";
+            statusWrapper.style.color = "#666";
+        }
+    }
+
+    // ページを読み込んだ時に実行
+    updateCountdown();
+    </script>
+    
+</body>
