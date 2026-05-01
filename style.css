@@ -256,9 +256,10 @@ th, td { border: 1px solid #ddd; padding: 12px; }
 th { background-color: #c3d825; color: white; }
 
 /* タイムテーブル内のリンク設定 */
-#timetable table td a {
+#timetable table td a,
+#contact a {
     text-decoration: none; /* 下線を消す */
-    color: #333;           /* 基本の文字色（お好みで） */
+    color: #c3d825;           /* 基本の文字色（お好みで） */
     font-weight: bold;     /* 太文字を強調 */
     transition: color 0.3s ease, transform 0.3s ease; /* 変化を滑らかにする */
     display: inline-block; /* 動き（transform）を有効にするため */
@@ -279,6 +280,12 @@ th { background-color: #c3d825; color: white; }
 #timetable table td a:hover {
     color: #c3d825;        /* 学祭カラーの緑に変える */
     transform: translateY(-2px);
+}
+
+#contact a:hover {
+    color: #227924;
+    text-decoration: underline; /* 下線を表示 */
+    text-underline-offset: 4px; /* 下線と文字の距離を少し離すと綺麗です */
 }
 
 /* ジャンプ先の位置を上に80px分あける設定 */
