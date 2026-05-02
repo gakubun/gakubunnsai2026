@@ -138,15 +138,15 @@ section {
 
 /* 時間の幅をしっかり確保 */
 .time {
-    width: 110px; 
+    width: 13px; 
     font-weight: bold;
     color: #227924;
     background: #f9f9f9;
     text-align: center !important;
 }
 
-.stage-place { width: 100px; color: #358f94; font-size: 0.85em; }
-.group-name { font-weight: 500; }
+.stage-place { width: 215px; color: #358f94; font-size: 1em; }
+.group-name { font-weight: 200; }
 
 /* --- イベント紹介 --- */
 .info-flex {
@@ -251,5 +251,6 @@ section {
     .guest-title { font-size: 2.5em; }
 
     .schedule-table { font-size: 0.8em; }
-    .time { width: 90px; }
+    .time { width: 30px; }
+    .stage-place { width: 135px; }
 }
