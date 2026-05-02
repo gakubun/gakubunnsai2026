@@ -104,9 +104,8 @@ section {
 
 /* --- スケジュールコンテナ（横並び設定） --- */
 .schedule-container {
-    display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    display: block; /* スマホでは標準の縦並び */
+    width: 100%;
 }
 
 .committee-photo {
