@@ -1,7 +1,7 @@
 /* --- 基本設定 --- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: "Helvetica Neue", Arial, sans-serif; background-color: #f4f7f9; color: #333; line-height: 1.6; }
-.page-header { text-align: center; padding: 40px 20px; background: #fff; margin-bottom: 30px; }
+body { font-family: "Helvetica Neue", Arial, sans-serif; background-color: #f4ffc4; color: #000000; line-height: 1.6; }
+.page-header { text-align: center; padding: 40px 20px; background: #c3d825; margin-bottom: 30px; }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 50px; }
 .circle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
 
