@@ -277,8 +277,9 @@ section {
 /* --- モバイル対応 --- */
 @media (max-width: 1024px) {
     .schedule-container {
-        display: flex;       /* 横並びにする */
-        gap: 40px;           /* 画像と表の間の余白 */
+        display: flex;        /* ここで初めて横並びにする */
+        flex-direction: row;  /* 横方向に並べる */
+        gap: 40px;            /* 画像と表の間のスキマ */
         align-items: flex-start;
     }
 
