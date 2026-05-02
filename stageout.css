@@ -72,10 +72,17 @@ body {
 
 /* --- コンテンツエリア --- */
 .content-section {
-    background-color: rgba(255, 255, 255, 0.85);
-    padding: 40px 0;
     position: relative;
     z-index: 10;
+    background-color: rgba(255, 255, 255, 0.85); 
+    
+    /* 修正ポイント：height ではなく min-height を使う */
+    min-height: 100vh; /* 最低でも画面の高さ分は確保する */
+    padding-top: 40px;
+    padding-bottom: 80px; /* 下に余白を多めに取ると切れにくい */
+    
+    /* 中身がはみ出しても背景を広げる設定 */
+    overflow: hidden; 
 }
 
 header h1 {
