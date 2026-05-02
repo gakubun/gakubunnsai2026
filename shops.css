@@ -139,10 +139,10 @@ section {
 }
 
 /* 列ごとの幅調整 */
-.number { width: 35px; text-align: center !important; font-weight: bold; background: #f9f9f9; }
-.shop-name { width: 25%; font-weight: bold; color: #227924; }
-.group-name { width: 20%; color: #666; font-size: 0.9em; }
-.goods-name { width: auto; line-height: 1.4; }
+.number { width: 12%; text-align: center !important; font-weight: bold; background: #f9f9f9; }
+.shop-name { width: 48%; font-weight: bold; color: #227924; }
+.group-name { width: 18%; color: #666; font-size: 0.5em; }
+.goods-name { width: 50%; line-height: 1.4; }
 
 /* --- イベント紹介 --- */
 .info-flex {
@@ -295,6 +295,11 @@ section {
     .map-area, .day-group {
         width: 100%;          /* 横幅いっぱい */
     }
+
+    .number { width: 10.5%; text-align: center !important; font-weight: bold; background: #f9f9f9; }
+    .shop-name { width: 45%; font-weight: bold; color: #227924; }
+    .group-name { width: 20%; color: #666; font-size: 0.5em; }
+    .goods-name { width: 25%; line-height: 1.4; }
 }
 
 footer {
