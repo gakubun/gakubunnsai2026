@@ -123,15 +123,17 @@ section {
 }
 
 .map-area img {
-    width: 100%;
+    width: 100%;         /* 画像を横幅いっぱいに */
     height: auto;
-    display: block;
-    border-radius: 8px;
 }
 
 .day-group {
     flex: 1;
     min-width: 0; /* フレックスアイテムの潰れ防止 */
+}
+
+.day-group-wrapper {
+    width: 100%;         /* 表のエリアも横幅いっぱいに */
 }
 
 .day-label {
