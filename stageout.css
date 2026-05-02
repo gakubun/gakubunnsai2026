@@ -109,6 +109,27 @@ section {
     justify-content: space-between;
 }
 
+.committee-photo {
+    width: 100%;      /* 親要素の幅いっぱいに広げる */
+    height: auto;     /* 縦横比を維持する */
+    display: block;   /* 画像の下にできる隙間をなくす */
+    margin: 0 auto;   /* 中央寄せ（必要であれば） */
+    border-radius: 8px; /* 他のセクションと合わせて角を丸くすると綺麗です */
+}
+
+/* もし「map-area」自体に余白があるなら、それも調整 */
+.map-area {
+    width: 100%;
+    margin-bottom: 20px; /* 画像と表の間の隙間 */
+}
+
+.map-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
 .day-group {
     flex: 1;
     min-width: 0; /* フレックスアイテムの潰れ防止 */
@@ -145,9 +166,9 @@ section {
 }
 
 .time { width: 80px; font-weight: bold; color: #227924; background: #f9f9f9; }
-.group-name { width: 90px; }
-.stage-name { width: auto; font-weight: 500; }
-.stage-place { width: 90px; color: #358f94; font-size: 0.9em; }
+.group-name { width: 100px; }
+.stage-name { width: auto; font-weight: 400; }
+.stage-place { width: 105px; color: #358f94; font-size: 1em; }
 
 /* --- イベント紹介（画像3枚・テキスト） --- */
 .info-flex {
@@ -255,7 +276,20 @@ section {
 /* --- モバイル対応 --- */
 @media (max-width: 1024px) {
     .schedule-container {
-        flex-direction: column;
+        display: flex;       /* 横並びにする */
+        gap: 40px;           /* 画像と表の間の余白 */
+        align-items: flex-start;
+    }
+
+    .map-area {
+        flex: 0 0 400px;     /* 画像の幅を400pxに固定 */
+        position: sticky;    /* スクロールしても画像を追いかけさせる */
+        top: 100px;
+        margin-bottom: 0;    /* PCでは下の余白は不要 */
+    }
+
+    .day-group-wrapper {
+        flex: 1;             /* 残りの幅をすべて表に使う */
     }
     
     .schedule-table {
