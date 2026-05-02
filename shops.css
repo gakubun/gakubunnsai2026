@@ -183,9 +183,14 @@ section {
 
 /* マップ画像のエリア */
 .map-area {
-    flex: 1;             /* 幅の比率（1） */
-    min-width: 0;
-}
+        flex: 0 0 400px;
+        
+        /* --- ここからが「ついてくる」設定 --- */
+        position: -webkit-sticky; /* Safari対応 */
+        position: sticky;        /* スクロールに追従させる */
+        top: 130px;              /* 画面の上から100pxの位置で止まる（ヘッダーの高さに合わせる） */
+        /* ---------------------------------- */
+    }
 
 .map-area img {
     width: 100%;
@@ -292,8 +297,10 @@ section {
         gap: 20px;
     }
 
-    .map-area, .day-group {
-        width: 100%;          /* 横幅いっぱい */
+    .map-area {
+    position: static;    /* 通常の配置（スクロールと一緒に画面外へ流れる） */
+    width: 100%;
+    margin-bottom: 20px;
     }
 
     .number { width: 10.5%; text-align: center !important; font-weight: bold; background: #f9f9f9; }
