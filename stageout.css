@@ -111,16 +111,10 @@ section {
 
 /* --- スケジュールコンテナ（横並び設定） --- */
 .schedule-container {
-    display: block; /* スマホでは標準の縦並び */
-    width: 100%;
-}
-
-.committee-photo {
-    width: 100%;      /* 親要素の幅いっぱいに広げる */
-    height: auto;     /* 縦横比を維持する */
-    display: block;   /* 画像の下にできる隙間をなくす */
-    margin: 0 auto;   /* 中央寄せ（必要であれば） */
-    border-radius: 8px; /* 他のセクションと合わせて角を丸くすると綺麗です */
+    display: flex;
+    gap: 30px;           /* 画像と表の間の隙間 */
+    align-items: flex-start; /* 上揃え */
+    margin-bottom: 40px;
 }
 
 /* マップ画像のエリア */
@@ -140,6 +134,14 @@ section {
     border-radius: 10px;
     border: 3px solid #c3d825; /* 学祭カラーの枠線 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.committee-photo {
+    width: 100%;      /* 親要素の幅いっぱいに広げる */
+    height: auto;     /* 縦横比を維持する */
+    display: block;   /* 画像の下にできる隙間をなくす */
+    margin: 0 auto;   /* 中央寄せ（必要であれば） */
+    border-radius: 8px; /* 他のセクションと合わせて角を丸くすると綺麗です */
 }
 
 .day-group {
