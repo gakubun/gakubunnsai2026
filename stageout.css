@@ -74,15 +74,14 @@ body {
 .content-section {
     position: relative;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color: rgba(255, 255, 255, 0.85); /* 白い幕 */
     
-    /* 修正ポイント：height ではなく min-height を使う */
-    min-height: 100vh; /* 最低でも画面の高さ分は確保する */
+    /* 高さを固定せず、中身に合わせて広がるようにする */
+    min-height: 100vh; 
+    height: auto; 
+    
     padding-top: 40px;
-    padding-bottom: 80px; /* 下に余白を多めに取ると切れにくい */
-    
-    /* 中身がはみ出しても背景を広げる設定 */
-    overflow: hidden; 
+    padding-bottom: 40px;
 }
 
 header h1 {
@@ -111,29 +110,8 @@ section {
 
 /* --- スケジュールコンテナ（横並び設定） --- */
 .schedule-container {
-    display: flex;
-    gap: 30px;           /* 画像と表の間の隙間 */
-    align-items: flex-start; /* 上揃え */
-    margin-bottom: 40px;
-}
-
-/* マップ画像のエリア */
-.map-area {
-        flex: 0 0 400px;
-        
-        /* --- ここからが「ついてくる」設定 --- */
-        position: -webkit-sticky; /* Safari対応 */
-        position: sticky;        /* スクロールに追従させる */
-        top: 130px;              /* 画面の上から100pxの位置で止まる（ヘッダーの高さに合わせる） */
-        /* ---------------------------------- */
-    }
-
-.map-area img {
+    display: block; /* スマホでは標準の縦並び */
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 3px solid #c3d825; /* 学祭カラーの枠線 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .committee-photo {
@@ -142,6 +120,26 @@ section {
     display: block;   /* 画像の下にできる隙間をなくす */
     margin: 0 auto;   /* 中央寄せ（必要であれば） */
     border-radius: 8px; /* 他のセクションと合わせて角を丸くすると綺麗です */
+}
+
+/* もし「map-area」自体に余白があるなら、それも調整 */
+.map-area {
+    width: 100%;
+    margin-bottom: 20px; /* 画像と表の間の隙間 */
+    /* --- ここからが「ついてくる」設定 --- */
+    position: -webkit-sticky; /* Safari対応 */
+    position: sticky;        /* スクロールに追従させる */
+    top: 130px;              /* 画面の上から100pxの位置で止まる（ヘッダーの高さに合わせる） */
+    /* ---------------------------------- */
+}
+
+.map-area img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    border: 3px solid #c3d825; /* 学祭カラーの枠線 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .day-group {
@@ -271,6 +269,12 @@ section {
     border: 3px solid #c3d825; /* 学祭カラーの枠線 */
 }
 
+.map-area {
+    position: static;    /* 通常の配置（スクロールと一緒に画面外へ流れる） */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 /* ★無限ループのアニメーション設定 */
 @keyframes loop-scroll {
     0% {
@@ -324,12 +328,6 @@ section {
     
     .guest-title {
         font-size: 2.5em;
-    }
-
-    .map-area {
-    position: static;    /* 通常の配置（スクロールと一緒に画面外へ流れる） */
-    width: 100%;
-    margin-bottom: 20px;
     }
 }
 
