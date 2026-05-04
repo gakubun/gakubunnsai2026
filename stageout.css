@@ -177,10 +177,43 @@ section {
     font-weight: bold;
 }
 
-.time { width: 80px; font-weight: bold; color: #227924; background: #f9f9f9; }
-.group-name { width: 100px; }
+.time { width: auto; font-weight: bold; color: #227924; background: #f9f9f9; }
+.group-name { width: auto; }
 .stage-name { width: auto; font-weight: 400; }
-.stage-place { width: 105px; color: #358f94; font-size: 1em; }
+.stage-place { width: auto; color: #358f94; font-size: 1em; }
+
+/* --- スマホ表示の設定（標準） --- */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;          /* 横方向のはみ出しをスクロール可能にする */
+    -webkit-overflow-scrolling: touch; /* iOSでのスクロールを滑らかにする */
+    margin-bottom: 20px;
+}
+
+/* スクロールバーの見た目を少し整える（任意） */
+.table-wrapper::-webkit-scrollbar {
+    height: 5px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #227924; /* 学祭カラーの緑 */
+    border-radius: 10px;
+}
+
+/* 「横にスクロールできます」という注釈を付ける（任意） */
+.day-group::after {
+    content: "← 横にスクロールして確認できます →";
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.schedule-table {
+    min-width: 600px;         /* ★重要：スマホでも表が潰れないよう最小幅を固定 */
+    width: 100%;
+    border-collapse: collapse;
+}
 
 /* --- イベント紹介（画像3枚・テキスト） --- */
 .info-flex {
@@ -332,7 +365,7 @@ section {
 
         /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
         /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1rem, 7vw, 5rem); 
+        font-size: clamp(1rem, 5vw, 3rem); 
 
         /* 3. 親要素からはみ出さないための保険 */
         display: inline-block;
@@ -345,7 +378,7 @@ section {
 
         /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
         /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1rem, 7vw, 5rem); 
+        font-size: clamp(1rem, 5vw, 3rem); 
 
         /* 3. 親要素からはみ出さないための保険 */
         display: inline-block;
