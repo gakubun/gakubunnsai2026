@@ -357,32 +357,6 @@ section {
     
     .hero-section {
         height: 100vh;
-    }
-    
-    .guest-title {
-        /* 1. 絶対に改行させない設定 */
-        white-space: nowrap; 
-
-        /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
-        /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1rem, 5vw, 3rem); 
-
-        /* 3. 親要素からはみ出さないための保険 */
-        display: inline-block;
-        max-width: 100%;
-    }
-
-    .hero-overlay h1 {
-        /* 1. 絶対に改行させない設定 */
-        white-space: nowrap; 
-
-        /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
-        /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1rem, 5vw, 3rem); 
-
-        /* 3. 親要素からはみ出さないための保険 */
-        display: inline-block;
-        max-width: 100%;
     }    
 }
 
