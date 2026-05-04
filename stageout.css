@@ -41,9 +41,18 @@ body {
 
 .guest-title {
     font-family: "Kaisei Decol", serif;
-    font-size: 4em;
     margin: 0;
     letter-spacing: 0.1em;
+    /* 1. 絶対に改行させない設定 */
+    white-space: nowrap; 
+
+    /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
+    /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
+    font-size: clamp(1.5rem, 8vw, 5rem); 
+
+    /* 3. 親要素からはみ出さないための保険 */
+    display: inline-block;
+    max-width: 100%;
 }
 
 /* スクロールダウンボタン */
@@ -88,7 +97,17 @@ header h1 {
     text-align: center;
     font-family: "Kaisei Decol", serif;
     color: #227924;
-    font-size: 2em;
+    
+    /* 1. 絶対に改行させない設定 */
+    white-space: nowrap; 
+
+    /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
+    /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
+    font-size: clamp(1.5rem, 8vw, 5rem); 
+
+    /* 3. 親要素からはみ出さないための保険 */
+    display: inline-block;
+    max-width: 100%;
 }
 
 section {
@@ -324,10 +343,6 @@ section {
     
     .hero-section {
         height: 100vh;
-    }
-    
-    .guest-title {
-        font-size: 2em;
     }
 }
 
