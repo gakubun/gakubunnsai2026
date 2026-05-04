@@ -342,9 +342,18 @@ section {
     .day-group-wrapper {
         flex: 1;             /* 残りの幅をすべて表に使う */
     }
+
+    .day-group::after {
+        display: none;
+    }
+
+    .table-wrapper {
+        overflow-x: visible;   /* PCではスクロールを解除 */
+    }
     
     .schedule-table {
         font-size: 0.95em;
+        min-width: auto;      /* PCでは画面幅に合わせる */
     }
 
     .time, .group-name, .stage-place {
@@ -357,7 +366,13 @@ section {
     
     .hero-section {
         height: 100vh;
-    }    
+    }
+    
+    .guest-title {
+        font-size: 1em;
+    }
+
+    .header h1 {font-size: 1em;}   
 }
 
 footer {
