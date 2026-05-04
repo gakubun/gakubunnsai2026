@@ -332,7 +332,7 @@ section {
 
         /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
         /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1.5rem, 8vw, 5rem); 
+        font-size: clamp(1rem, 7vw, 5rem); 
 
         /* 3. 親要素からはみ出さないための保険 */
         display: inline-block;
@@ -345,14 +345,12 @@ section {
 
         /* 2. 画面幅に合わせて文字サイズを流動的にする設定 */
         /* clamp(最小サイズ, 推奨サイズ, 最大サイズ) */
-        font-size: clamp(1.5rem, 8vw, 5rem); 
+        font-size: clamp(1rem, 7vw, 5rem); 
 
         /* 3. 親要素からはみ出さないための保険 */
         display: inline-block;
         max-width: 100%;
-    }
-
-    
+    }    
 }
 
 footer {
