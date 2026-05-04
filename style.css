@@ -83,6 +83,13 @@ html {
     /* 画面に合わせて横幅いっぱいに広がりやすくする */
     width: 90%;
     margin: 0 auto 20px;
+
+    /* 1. 絶対に改行させない設定 */
+    white-space: nowrap; 
+
+    /* 3. 親要素からはみ出さないための保険 */
+    display: inline-block;
+    max-width: 100%;
 }
 
 /* スクロールダウンボタン */
