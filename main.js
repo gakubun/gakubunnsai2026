@@ -25,9 +25,13 @@ function updateCountdown() {
         } 
         else if (now >= startDate && now <= endDate) {
             // 【期間中】5/21〜5/24の間
-            statusWrapper.innerHTML = "✨ <strong class='active-flash'>学文祭 本日開催中！</strong> ✨";
-            statusWrapper.style.color = "#227924"; // 開催中は緑色にするなどの演出
-        } 
+            // ★「✨」もすべてstrongの中に入れることで、一塊のデータとして縮小・改行防止されます
+            statusWrapper.innerHTML = "<strong class='active-flash'>✨ 学文祭 本日開催中！ ✨</strong>";
+            statusWrapper.style.color = "#227924"; 
+            
+            // 親要素自体の改行も念のため禁止しておく
+            statusWrapper.style.whiteSpace = "nowrap";
+        }
         else {
             // 【終了後】5/25以降
             statusWrapper.textContent = "学文祭は無事終了しました。ご来場ありがとうございました！";
