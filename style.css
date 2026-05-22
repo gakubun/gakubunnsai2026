@@ -149,8 +149,9 @@ html {
 .countdown-display strong, 
 #countdown-status strong {
     font-size: 1.8rem;
+    color: #fff;
     display: block;      /* 改行して大きく見せる */
-    margin-top: 5px;
+    margin-top: 6px;
     text-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
@@ -161,10 +162,10 @@ html {
     100% { opacity: 1; transform: scale(1); }
 }
 
-/* 開催中の文字を少し動かす（任意） */
-.countdown-display strong {
+.active-flash {
     display: inline-block;
-    animation: welcome-bounce 1s infinite alternate;
+    /* アニメーション名を「shine」に統一 */
+    animation: shine 1.5s infinite alternate ease-in-out; 
 }
 
 /* --- 3. 全体設定とコンテンツセクション --- */
