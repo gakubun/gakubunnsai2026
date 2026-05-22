@@ -353,6 +353,11 @@ strong {
     color: #000; /* 太字をよりはっきりさせる */
 }
 
+.committee-photo {
+        width: 100%;
+        max-width: none;
+}
+
 /* モバイル対応 (レスポンシブデザイン) */
 /* --- スマホ版のタイトルサイズ調整 --- */
 @media (max-width: 600px) {
