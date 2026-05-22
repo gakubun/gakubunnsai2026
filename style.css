@@ -164,8 +164,19 @@ html {
 
 .active-flash {
     display: inline-block;
-    /* アニメーション名を「shine」に統一 */
-    animation: shine 1.5s infinite alternate ease-in-out; 
+    
+    /* 1. 絶対に改行させない */
+    white-space: nowrap; 
+    
+    /* 2. スマホの横幅に合わせて文字サイズを流動的にする */
+    /* clamp(最小サイズ, 推奨サイズ(画面幅の7%), 最大サイズ) */
+    font-size: clamp(1.3rem, 7vw, 2.5rem); 
+    
+    /* 3. 親要素からはみ出さないための保険 */
+    max-width: 100%;
+    
+    /* アニメーションもここに統合 */
+    animation: shine 1.5s infinite alternate ease-in-out;
 }
 
 /* --- 3. 全体設定とコンテンツセクション --- */
