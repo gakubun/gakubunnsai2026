@@ -29,7 +29,9 @@ function updateCountdown() {
             statusWrapper.innerHTML = "<strong class='active-flash'>✨ 学文祭 本日開催中！ ✨</strong>";
             statusWrapper.style.color = "#227924"; 
             
-            // 親要素自体の改行も念のため禁止しておく
+            // --- ★ここを追加：スマホでも確実に真ん中寄せにする ---
+            statusWrapper.style.textAlign = "center";
+            statusWrapper.style.width = "100%;"
             statusWrapper.style.whiteSpace = "nowrap";
         }
         else {
