@@ -231,6 +231,11 @@
             // 【期間中】5/21〜5/24の間
             statusWrapper.innerHTML = " <strong class='active-flash'>✨ 学文祭 本日開催中！ ✨</strong> ";
             statusWrapper.style.color = "#227924"; // 開催中は緑色にするなどの演出
+            
+            // --- ★ここを追加：スマホでも確実に真ん中寄せにする ---
+            statusWrapper.style.textAlign = "center";
+            statusWrapper.style.width = "100%;"
+            statusWrapper.style.whiteSpace = "nowrap";
         }  
         else {
             // 【終了後】5/25以降
