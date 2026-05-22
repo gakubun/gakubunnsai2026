@@ -164,6 +164,10 @@ html {
 
 .active-flash {
     display: inline-block;
+
+    /* --- ★ここを追加：自分自身を中央に配置する --- */
+    margin: 0 auto;
+    text-align: center;
     
     /* 1. 絶対に改行させない */
     white-space: nowrap; 
