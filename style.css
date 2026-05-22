@@ -373,6 +373,18 @@ strong {
         max-width: none;
 }
 
+.table-wrapper {
+    overflow-x: visible; /* 横スクロールをオフに */
+}
+    
+#timetable table {
+    min-width: auto;    /* PCの画面幅に綺麗に収める */
+}
+    
+#timetable::after {
+    display: none;      /* PCではスクロールの案内文を消す */
+}
+
 /* モバイル対応 (レスポンシブデザイン) */
 /* --- スマホ版のタイトルサイズ調整 --- */
 @media (max-width: 600px) {
@@ -431,5 +443,39 @@ strong {
     }
     #countdown-days {
         font-size: 2.2rem;
+    }
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;                  /* 横方向のはみ出しをスクロール可能にする */
+        -webkit-overflow-scrolling: touch;         /* iOS（iPhone）で滑らかにスクロールさせる */
+        margin-bottom: 15px;
+        border-radius: 8px;                /* テーブルの角を少し丸めて綺麗に見せる（任意） */
+    }
+    
+    #timetable table {
+    /* ★重要：3つの曜日（3列）がスマホの狭い画面でも潰れないよう、全体の最小幅を確保 */
+        min-width: 750px; 
+        width: 100%;
+        border-collapse: collapse;
+    }
+    /* スクロールバーの見た目をオシャレにする（学祭カラーの緑） */
+    .table-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+    .table-wrapper::-webkit-scrollbar-thumb {
+        background: #227924; 
+        border-radius: 10px;
+    }
+    .table-wrapper::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    /* スマホの時だけ「横スクロールできます」のガイドを出す（親切設計） */
+    #timetable::after {
+        content: "← 左右にスクロールして全日程を確認できます →";
+        display: block;
+        font-size: 0.75rem;
+        color: #888;
+        text-align: center;
+        margin-top: 10px;
     }
 }
